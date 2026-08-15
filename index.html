@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Math Number Learning Hub: learn and practice even, odd, prime, composite numbers, factors, multiples and divisibility.">
+  <meta name="robots" content="index, follow">
+  <title>Math Number Learning Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="#home"><span class="logo-mark">N</span><span>Math Number<br><small>Learning Hub</small></span></a>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#learn">Learn</a>
+        <a href="#tools">Tools</a>
+        <a href="#practice">Practice</a>
+        <a href="#about">About</a>
+      </nav>
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">FREE MATHEMATICS RESOURCE</span>
+          <h1>Understand numbers.<br><span>Learn by doing.</span></h1>
+          <p>Explore even, odd, prime and composite numbers with interactive tools, clear explanations and quick practice challenges.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#tools">Start Exploring →</a>
+            <a class="btn secondary" href="#learn">Learn the Basics</a>
+          </div>
+          <div class="hero-stats">
+            <span><b>4</b> core concepts</span><span><b>3</b> interactive tools</span><span><b>∞</b> practice possibilities</span>
+          </div>
+        </div>
+        <div class="number-orbit" aria-hidden="true">
+          <div class="orbit-card c1">2<span>EVEN</span></div>
+          <div class="orbit-card c2">7<span>PRIME</span></div>
+          <div class="orbit-card c3">9<span>ODD</span></div>
+          <div class="orbit-card c4">12<span>COMPOSITE</span></div>
+          <div class="center-number">N<small>NUMBERS</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">LEARN</span><h2>Number basics made simple</h2><p>Start with the ideas behind the numbers before using the calculators.</p></div>
+        <div class="concept-grid">
+          <article class="concept even"><div class="concept-number">2</div><h3>Even Numbers</h3><p>Whole numbers divisible by 2 with no remainder.</p><strong>2, 4, 6, 8, 10...</strong></article>
+          <article class="concept odd"><div class="concept-number">3</div><h3>Odd Numbers</h3><p>Whole numbers that leave a remainder of 1 when divided by 2.</p><strong>1, 3, 5, 7, 9...</strong></article>
+          <article class="concept prime"><div class="concept-number">7</div><h3>Prime Numbers</h3><p>Numbers greater than 1 with exactly two positive factors: 1 and itself.</p><strong>2, 3, 5, 7, 11...</strong></article>
+          <article class="concept composite"><div class="concept-number">12</div><h3>Composite Numbers</h3><p>Whole numbers greater than 1 with more than two positive factors.</p><strong>4, 6, 8, 9, 10...</strong></article>
+        </div>
+
+        <div class="lesson-grid">
+          <article class="lesson">
+            <h3>What is a factor?</h3>
+            <p>A factor is a whole number that divides another number exactly. For example, the factors of 12 are 1, 2, 3, 4, 6 and 12.</p>
+            <div class="worked">12 ÷ 3 = 4 <span>✓ 3 is a factor of 12</span></div>
+          </article>
+          <article class="lesson">
+            <h3>What is a multiple?</h3>
+            <p>A multiple is the result of multiplying a number by a whole number. The multiples of 5 include 5, 10, 15, 20 and 25.</p>
+            <div class="worked">5 × 4 = 20 <span>✓ 20 is a multiple of 5</span></div>
+          </article>
+        </div>
+
+        <div class="divisibility">
+          <h3>Quick divisibility rules</h3>
+          <div class="rule-grid">
+            <div><b>2</b><span>Last digit is 0, 2, 4, 6 or 8.</span></div>
+            <div><b>3</b><span>Digits add up to a multiple of 3.</span></div>
+            <div><b>5</b><span>Last digit is 0 or 5.</span></div>
+            <div><b>10</b><span>Last digit is 0.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="tools">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">INTERACTIVE TOOLS</span><h2>Try the number lab</h2><p>Get instant answers and see the reasoning behind the result.</p></div>
+
+        <div class="tools-grid">
+          <article class="tool-card">
+            <div class="tool-icon">⌕</div><h3>Number Search</h3><p>Check one number at a time.</p>
+            <input id="singleNumber" type="number" placeholder="Enter a whole number">
+            <button class="btn primary full" id="checkNumber">Check Number</button>
+            <div id="singleResult" class="tool-result"></div>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-icon">↔</div><h3>Range Classifier</h3><p>Separate a range into even, odd and prime numbers.</p>
+            <div class="two-inputs"><input id="startNumber" type="number" value="1" placeholder="Start"><input id="endNumber" type="number" value="50" placeholder="End"></div>
+            <button class="btn primary full" id="classifyRange">Classify Range</button>
+            <div id="rangeError" class="tool-result error"></div>
+          </article>
+
+          <article class="tool-card">
+            <div class="tool-icon">÷</div><h3>Factor Finder</h3><p>Find all positive factors of a number.</p>
+            <input id="factorNumber" type="number" placeholder="e.g. 36">
+            <button class="btn primary full" id="findFactors">Find Factors</button>
+            <div id="factorResult" class="tool-result"></div>
+          </article>
+        </div>
+
+        <div class="results panel hidden" id="rangeResults">
+          <div class="results-top"><h3>Range results <span id="rangeLabel"></span></h3><button class="btn secondary" id="exportResults">Export .txt</button></div>
+          <div class="result-grid">
+            <div class="result-box even"><h4>Even <span id="evenCount">0</span></h4><div id="evenNumbers"></div></div>
+            <div class="result-box odd"><h4>Odd <span id="oddCount">0</span></h4><div id="oddNumbers"></div></div>
+            <div class="result-box prime"><h4>Prime <span id="primeCount">0</span></h4><div id="primeNumbers"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="practice">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">PRACTICE</span><h2>Quick number challenge</h2><p>Test yourself. The answer is revealed after you make your choice.</p></div>
+        <div class="quiz-card">
+          <div class="quiz-number" id="quizNumber">37</div>
+          <h3>What type of number is this?</h3>
+          <div class="quiz-options">
+            <button data-answer="Even">Even</button><button data-answer="Odd">Odd</button><button data-answer="Prime">Prime</button><button data-answer="Composite">Composite</button>
+          </div>
+          <p id="quizFeedback" class="quiz-feedback"></p>
+          <button class="btn secondary" id="nextQuestion">Next Question →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="about">
+      <div class="container info-grid">
+        <article><span class="eyebrow">ABOUT</span><h2>A small project with a big learning goal.</h2><p>Math Number Learning Hub is an educational project designed to make number theory easier to explore through explanations, examples and interactive practice.</p></article>
+        <article><h3>How to use this site</h3><ol><li>Read the concepts in the Learn section.</li><li>Use the Number Lab to investigate numbers.</li><li>Try the practice challenge.</li><li>Return with a new range or number and keep exploring.</li></ol></article>
+      </div>
+    </section>
+
+    <section class="section legal">
+      <div class="container legal-grid">
+        <article><h3>Privacy</h3><p>This starter site does not require an account and the number calculations happen in your browser. If you later add analytics, advertising or contact forms, update this privacy notice to explain what data those services collect.</p></article>
+        <article><h3>Contact</h3><p>For questions, corrections or suggestions, replace this text with your preferred public contact email before publishing.</p></article>
+        <article><h3>Advertising</h3><p>If advertising is added later, clearly distinguish advertisements from educational content and follow the advertising provider's policies.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap"><div><b>Math Number Learning Hub</b><p>Learn numbers. Practice skills. Build confidence.</p></div><div><a href="#learn">Learn</a><a href="#tools">Tools</a><a href="#practice">Practice</a><a href="#about">About</a></div></div>
+    <div class="copyright">© 2026 Math Number Learning Hub · Educational Project</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
